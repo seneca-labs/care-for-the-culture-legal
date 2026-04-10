@@ -275,10 +275,6 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <div class="dir-table" style="opacity:0;transform:translateY(14px);transition:opacity 500ms ease,transform 500ms ease">
 <p style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--coral);font-weight:600;margin-bottom:1.5vh">WHAT WE MOVED AWAY FROM</p>
 <div style="border-bottom:1px solid var(--border);padding:1.2vh 0">
-<p style="font-size:1.05rem;font-weight:600;color:var(--text)">Feed as social browsing</p>
-<p style="font-size:0.9rem;color:var(--dim);margin-top:0.3vh">Risked reading as a hookup app to the client.</p>
-</div>
-<div style="border-bottom:1px solid var(--border);padding:1.2vh 0">
 <p style="font-size:1.05rem;font-weight:600;color:var(--text)">Signals as standalone map</p>
 <p style="font-size:0.9rem;color:var(--dim);margin-top:0.3vh">Too abstract without photos to ground the experience.</p>
 </div>
@@ -328,7 +324,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <div class="journey-row"><span class="journey-num">8</span><span class="journey-name">Your impact</span><span class="journey-desc">Your photo appears among the dots.</span></div>
 <div class="journey-row"><span class="journey-num">9</span><span class="journey-name">Card + contact</span><span class="journey-desc">Your photo is tinted with optional name and IG.</span></div>
 <div class="journey-row"><span class="journey-num">10</span><span class="journey-name">Join the feed</span><span class="journey-desc">Choose public or private, both get a morning text.</span></div>
-<div class="journey-row" style="border-bottom:none"><span class="journey-num">11</span><span class="journey-name">Done</span><span class="journey-desc">A QR code appears, then back to idle.</span></div>
+<div class="journey-row" style="border-bottom:none"><span class="journey-num">11</span><span class="journey-name">Done</span><span class="journey-desc">Photo prints. A QR code appears, then back to idle.</span></div>
 </div>
 </div>
 </div>
@@ -538,8 +534,48 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 </div>
 
-<!-- ==================== SLIDE 13: HOME SCREEN ==================== -->
-<div class="slide" data-slide="13">
+<!-- ==================== SLIDE 13: WHAT YOU TAKE HOME ==================== -->
+<div class="slide slide-top" data-slide="13">
+<div class="stagger">
+<p class="label teal">SIGNALS</p>
+<div class="gap-sm"></div>
+<h2>what you take home</h2>
+<div class="gap"></div>
+<div style="display:grid;grid-template-columns:2fr 3fr;gap:3vw;align-items:start">
+  <div>
+    <div class="card-sm">
+      <h3 style="margin-bottom:1vh">The photo card</h3>
+      <p style="font-size:0.95rem;color:var(--muted);line-height:1.6;max-width:none">Your photo, tinted by your prevention journey answer. Teal if you're on PrEP. Amber if you've heard of it. Coral if you haven't. Neutral if you opted out. The color is subtle enough that it only means something if you know what it means. Underneath: your node, your data, the map. Vertical format. Texted immediately. Shareable to IG stories. It looks like a tinted party photo, not a health campaign.</p>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1vw">
+    <div style="position:relative;border-radius:12px;overflow:hidden;height:42vh">
+      <img src="assets/photo-1.png" style="width:100%;height:100%;object-fit:cover;display:block">
+      <div style="position:absolute;inset:0;background:rgba(124,181,24,0.35);mix-blend-mode:multiply"></div>
+      <span style="position:absolute;bottom:10px;left:12px;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:rgba(238,234,217,0.9);letter-spacing:0.06em">10451</span>
+    </div>
+    <div style="position:relative;border-radius:12px;overflow:hidden;height:42vh">
+      <img src="assets/photo-2.png" style="width:100%;height:100%;object-fit:cover;display:block">
+      <div style="position:absolute;inset:0;background:rgba(246,182,100,0.35);mix-blend-mode:multiply"></div>
+      <span style="position:absolute;bottom:10px;left:12px;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:rgba(238,234,217,0.9);letter-spacing:0.06em">90001</span>
+    </div>
+    <div style="position:relative;border-radius:12px;overflow:hidden;height:42vh">
+      <img src="assets/photo-3.png" style="width:100%;height:100%;object-fit:cover;display:block">
+      <div style="position:absolute;inset:0;background:rgba(181,51,36,0.35);mix-blend-mode:multiply"></div>
+      <span style="position:absolute;bottom:10px;left:12px;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:rgba(238,234,217,0.9);letter-spacing:0.06em">11221</span>
+    </div>
+    <div style="position:relative;border-radius:12px;overflow:hidden;height:42vh">
+      <img src="assets/photo-4.png" style="width:100%;height:100%;object-fit:cover;display:block">
+      <div style="position:absolute;inset:0;background:rgba(76,48,13,0.25);mix-blend-mode:multiply"></div>
+      <span style="position:absolute;bottom:10px;left:12px;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:rgba(238,234,217,0.9);letter-spacing:0.06em">90011</span>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 14: HOME SCREEN ==================== -->
+<div class="slide" data-slide="14">
 <div class="stagger">
 <p class="label teal">INTERFACE</p>
 <div class="gap-sm"></div>
@@ -925,13 +961,100 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 </div>
 
+
+<!-- ==================== SLIDE 22: BUDGET SUMMARY ==================== -->
+<div class="slide section-divider" data-slide="22" data-dark="true" style="background:var(--darkbrown);padding:0;justify-content:flex-end;align-items:flex-start;padding:12vh 8vw">
+<div class="stagger">
+<h1 style="font-size:clamp(5rem,10vw,10rem);color:rgba(238,234,217,0.9);line-height:0.95">Budget<br>Summary</h1>
+</div>
+</div>
+
+<!-- ==================== SLIDE 23: PHASE 1 — OPTION 1 ==================== -->
+<div class="slide slide-top" data-slide="23" data-dark="true" style="background:var(--darkbrown)">
+<div class="stagger">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4vh">
+<p style="font-size:0.78rem;color:rgba(238,234,217,0.35);font-family:'JetBrains Mono',monospace;letter-spacing:0.08em">Majority</p>
+<p style="font-size:0.78rem;color:rgba(238,234,217,0.25);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em">Proprietary + Confidential</p>
+</div>
+<p class="label" style="color:rgba(238,234,217,0.4);margin-bottom:1.5vh">Phase 1 — Option 1</p>
+<h2 style="color:var(--lime);font-size:clamp(1.8rem,3vw,3rem);margin-bottom:3vh">The Feed &amp; Signals w/ Kiosk <span style="color:rgba(238,234,217,0.6)">(~$350k)</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:start">
+<div style="display:flex;flex-direction:column;gap:1.4vh">
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--lime);flex-shrink:0;margin-top:0.15em">—</span><p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">Activation across LA &amp; NYC</p></div>
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--lime);flex-shrink:0;margin-top:0.15em">—</span>
+  <div>
+    <p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">4 custom branded kiosks (49″ touchscreens), shipping &amp; logistics, on-site installation, and printed takeaways for guests</p>
+    <div style="margin-top:1vh;padding-left:1.5vw;display:flex;flex-direction:column;gap:0.8vh">
+      <div style="display:flex;gap:1vw;align-items:flex-start"><span style="color:var(--amber);flex-shrink:0;font-size:0.85em">—</span><p style="font-size:clamp(0.85rem,1.05vw,1.05rem);color:rgba(238,234,217,0.55);line-height:1.5;max-width:none">3x days: load-in, event &amp; load-out</p></div>
+      <div style="display:flex;gap:1vw;align-items:flex-start"><span style="color:var(--amber);flex-shrink:0;font-size:0.85em">—</span>
+        <div>
+          <p style="font-size:clamp(0.85rem,1.05vw,1.05rem);color:rgba(238,234,217,0.55);line-height:1.5;max-width:none">Option for scalability based on the event</p>
+          <div style="padding-left:1.5vw;margin-top:0.5vh"><div style="display:flex;gap:1vw;align-items:flex-start"><span style="color:rgba(238,234,217,0.3);flex-shrink:0;font-size:0.8em">—</span><p style="font-size:clamp(0.8rem,0.95vw,0.95rem);color:rgba(238,234,217,0.4);line-height:1.5;max-width:none">4 kiosks based on ~1500 attendees</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--lime);flex-shrink:0;margin-top:0.15em">—</span><p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">A live social platform where photos taken at the kiosks appear instantly on a mobile app for sharing &amp; connecting with other party goers. Opportunity for shareability driving awareness and engagement beyond the event.</p></div>
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--lime);flex-shrink:0;margin-top:0.15em">—</span><p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">Interactive node map showcasing HIV data based on the user's zip code</p></div>
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--lime);flex-shrink:0;margin-top:0.15em">—</span><p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">SMS platform (Twilio) and AWS Cloud Hosting for user session data and photo storage</p></div>
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--lime);flex-shrink:0;margin-top:0.15em">—</span><p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">Team fees inclusive of our Creative Director, Creative Strategist, Designer and Project Manager, and three specialized Developer teams for kiosk integration, data backend, and front end effects</p></div>
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--lime);flex-shrink:0;margin-top:0.15em">—</span><p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">Travel logistics for our NY and San Diego-based teams, covering flights, hotels, and airport transfer</p></div>
+</div>
+<div style="width:100%;height:70vh;border-radius:10px;overflow:hidden">
+<img src="assets/kiosk%20party%20mock%201.png" alt="Kiosk Party Mock" style="width:100%;height:100%;object-fit:cover;display:block">
+</div>
+</div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 24: PHASE 1 — OPTION 2 ==================== -->
+<div class="slide slide-top" data-slide="24" data-dark="true" style="background:var(--darkbrown)">
+<div class="stagger">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4vh">
+<p style="font-size:0.78rem;color:rgba(238,234,217,0.35);font-family:'JetBrains Mono',monospace;letter-spacing:0.08em">Majority</p>
+<p style="font-size:0.78rem;color:rgba(238,234,217,0.25);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em">Proprietary + Confidential</p>
+</div>
+<p class="label" style="color:rgba(238,234,217,0.4);margin-bottom:1.5vh">Phase 1 — Option 2</p>
+<h2 style="color:var(--coral);font-size:clamp(1.8rem,3vw,3rem);margin-bottom:3vh">The Feed &amp; Signals w/o Kiosk <span style="color:rgba(238,234,217,0.6)">(~$215k)</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:start">
+<div style="display:flex;flex-direction:column;gap:1.4vh">
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--coral);flex-shrink:0;margin-top:0.15em">—</span><p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">Activation across LA &amp; NYC</p></div>
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--coral);flex-shrink:0;margin-top:0.15em">—</span><p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">A live social platform where photos taken on the guest's phones appear instantly on a mobile app for sharing &amp; connecting with other party goers.</p></div>
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--coral);flex-shrink:0;margin-top:0.15em">—</span><p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">Interactive node map showcasing HIV data based on the user's zip code</p></div>
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--coral);flex-shrink:0;margin-top:0.15em">—</span><p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">SMS platform (Twilio) and AWS Cloud Hosting for user session data and photo storage</p></div>
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--coral);flex-shrink:0;margin-top:0.15em">—</span><p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">Team fees inclusive of our Creative Director, Creative Strategist, Designer and Project Manager, and three specialized Developer teams for QA support, data backend, and front end effects</p></div>
+<div style="display:flex;gap:1.4vw;align-items:flex-start"><span style="color:var(--coral);flex-shrink:0;margin-top:0.15em">—</span><p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:rgba(238,234,217,0.75);line-height:1.6;max-width:none">Travel logistics for our NY and San Diego-based teams, covering flights, hotels, and airport transfer</p></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:1.2vh">
+<div style="width:100%;height:34vh;border-radius:10px;overflow:hidden">
+<img src="assets/mobile%20app%20party%20mock%201.png" alt="Mobile App Party Mock" style="width:100%;height:100%;object-fit:cover;display:block">
+</div>
+<div style="width:100%;height:34vh;border-radius:10px;overflow:hidden">
+<img src="assets/first%20person%20mobile.png" alt="First Person Mobile" style="width:100%;height:100%;object-fit:cover;display:block">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 25: THANK YOU ==================== -->
+<div class="slide" data-slide="25" data-dark="true" style="background:var(--darkbrown);justify-content:center;align-items:flex-start;padding:12vh 8vw">
+<div class="stagger">
+<h1 style="font-size:clamp(5rem,10vw,10rem);color:var(--lime);line-height:0.95">Thank<br>You.</h1>
+<div style="height:6vh"></div>
+<p style="font-size:0.85rem;color:rgba(238,234,217,0.3);font-family:'JetBrains Mono',monospace;letter-spacing:0.05em">Prepared by Vega Studio</p>
+<p style="font-size:0.85rem;color:rgba(238,234,217,0.25);font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;margin-top:0.6vh">ceej@vega.earth</p>
+</div>
+</div>
+
 </div><!-- end .deck -->
 
 <div class="nav">
 <button class="nav-btn" onclick="navigate(-1)">&#8592;</button>
 <button class="nav-btn" onclick="navigate(1)">&#8594;</button>
 </div>
-<div class="counter" id="counter">1 / 22</div>
+<div class="counter" id="counter">1 / 26</div>
 
 <script>
 (function(){
