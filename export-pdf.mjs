@@ -70,6 +70,13 @@ const outputPath = path.resolve(__dirname, 'care-for-the-culture-deck.pdf');
       el.style.transitionDelay = '0ms';
     });
 
+    // Swap GIFs for static PNGs so they render in PDF
+    document.querySelectorAll('img[src$=".gif"]').forEach(img => {
+      const src = img.getAttribute('src');
+      const staticSrc = src.replace('.gif', '-static.png');
+      img.setAttribute('src', staticSrc);
+    });
+
     // Force any remaining inline opacity:0 elements
     document.querySelectorAll('[style*="opacity: 0"], [style*="opacity:0"]').forEach(el => {
       if (el.id !== 'flow-bracket') {
@@ -136,8 +143,8 @@ const outputPath = path.resolve(__dirname, 'care-for-the-culture-deck.pdf');
     }
   });
 
-  // Extra wait for everything to settle
-  await new Promise(r => setTimeout(r, 2000));
+  // Extra wait for static PNGs to load after GIF swap
+  await new Promise(r => setTimeout(r, 3000));
 
   await page.pdf({
     path: outputPath,
