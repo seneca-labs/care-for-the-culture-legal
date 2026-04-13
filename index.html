@@ -220,22 +220,24 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 
 <!-- ==================== SLIDE: OUR APPROACH ==================== -->
-<div class="slide" data-slide="3">
+<div class="slide" data-slide="3" id="approach-slide">
 <div class="stagger">
 <p class="label coral">STRATEGY</p>
 <div class="gap-sm"></div>
 <h2>our approach</h2>
 <div class="gap"></div>
 <div class="g2" style="gap:2.5vw;align-items:start">
-<div class="card" style="border-top:4px solid var(--orange)">
+<div id="common-card" class="card" style="border-top:4px solid var(--orange);opacity:0;transform:translateY(16px);transition:opacity 600ms ease,transform 600ms ease,filter 600ms ease">
 <p style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--orange);font-weight:600;margin-bottom:1vh">THE COMMON NARRATIVE</p>
 <p style="font-size:clamp(1.1rem,1.3vw,1.3rem);color:var(--text);font-weight:600;line-height:1.4">Show people how many HIV cases are near them, and hope that fear motivates action.</p>
 </div>
-<div class="card" style="border-top:4px solid var(--teal)">
+<div id="our-card" class="card" style="border-top:4px solid var(--teal);opacity:0;transform:translateY(16px);transition:opacity 600ms ease,transform 600ms ease">
 <p style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--teal);font-weight:600;margin-bottom:1vh">OUR NARRATIVE</p>
 <p style="font-size:clamp(1.1rem,1.3vw,1.3rem);color:var(--text);font-weight:600;line-height:1.4">Show people where their community stands, where the gap is, and how they fit into the picture.</p>
 </div>
 </div>
+<div class="gap"></div>
+<p id="approach-closing" style="font-size:clamp(1.1rem,1.35vw,1.35rem);color:var(--muted);line-height:1.7;max-width:64ch;opacity:0;transition:opacity 600ms ease">The data is not the destination, but the context we use to make the experience meaningful.</p>
 </div>
 </div>
 
@@ -1322,6 +1324,27 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 
   if(dirSlide) initDirTables();
 
+  // Approach slide: two-step card reveal
+  const approachSlide = document.getElementById('approach-slide');
+  const commonCard = document.getElementById('common-card');
+  const ourCard = document.getElementById('our-card');
+  const approachClosing = document.getElementById('approach-closing');
+  let approachStep = 0;
+
+  function resetApproach(){
+    approachStep = 0;
+    if(commonCard){ commonCard.style.opacity='0'; commonCard.style.transform='translateY(16px)'; commonCard.style.filter=''; }
+    if(ourCard){ ourCard.style.opacity='0'; ourCard.style.transform='translateY(16px)'; }
+    if(approachClosing) approachClosing.style.opacity='0';
+  }
+
+  function showApproachAll(){
+    if(commonCard){ commonCard.style.opacity='0.45'; commonCard.style.transform='translateY(0)'; commonCard.style.filter='grayscale(0.6)'; }
+    if(ourCard){ ourCard.style.opacity='1'; ourCard.style.transform='translateY(0)'; }
+    if(approachClosing) approachClosing.style.opacity='1';
+    approachStep = 2;
+  }
+
   // Column-by-column reveal for the answers slide
   const ansSlide = document.getElementById('answers-slide');
   let ansCols = [];
@@ -1461,6 +1484,28 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
   if(pathsSlide) initPathRows();
 
   window.navigate = function(dir){
+    // Approach slide: step 1 = common card, step 2 = our card + gray common
+    if(dir === 1 && approachSlide && slides[current] === approachSlide){
+      if(approachStep === 0){
+        commonCard.style.opacity='1'; commonCard.style.transform='translateY(0)';
+        approachStep = 1;
+        return;
+      }
+      if(approachStep === 1){
+        commonCard.style.opacity='0.45'; commonCard.style.filter='grayscale(0.6)';
+        ourCard.style.opacity='1'; ourCard.style.transform='translateY(0)';
+        approachClosing.style.opacity='1';
+        approachStep = 2;
+        return;
+      }
+      // step 2 done, advance to next slide
+      resetApproach();
+    }
+    // Going backward into approach slide: show all
+    if(dir === -1 && approachSlide && current > 0 && slides[current-1] === approachSlide){
+      // will be handled after show()
+    }
+
     // Flow slide: highlight inputs/outputs on first forward press
     if(dir === 1 && flowSlide && slides[current] === flowSlide && !flowHighlighted){
       highlightFlow();
@@ -1502,6 +1547,10 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
       dataPhases.forEach(p => { p.style.opacity='1'; p.style.transform='translateY(0)'; });
       dataIdx = dataPhases.length;
       dataActive = true;
+    }
+    // Going backward into approach slide: show all
+    if(approachSlide && slides[current] === approachSlide && dir === -1){
+      showApproachAll();
     }
   };
 
