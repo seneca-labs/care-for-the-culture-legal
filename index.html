@@ -219,10 +219,10 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 </div>
 </div>
-<!-- RIGHT: Phone images -->
-<div style="display:flex;gap:1.5vw;align-items:center;flex-shrink:0">
-<img src="assets/problem-phone-1.png" alt="Anonymous profile" style="height:min(480px,60vh);width:auto;border-radius:16px;display:block;box-shadow:0 16px 48px rgba(76,48,13,0.15)">
-<img src="assets/problem-phone-2.png" alt="Health status on profile" style="height:min(480px,60vh);width:auto;border-radius:16px;display:block;box-shadow:0 16px 48px rgba(76,48,13,0.15)">
+<!-- RIGHT: Phone images overlapping -->
+<div style="position:relative;flex-shrink:0;width:min(380px,28vw);height:min(520px,65vh)">
+<img src="assets/problem-phone-1.png" alt="Anonymous profile" style="position:absolute;top:0;left:0;height:min(440px,55vh);width:auto;border-radius:16px;display:block;box-shadow:0 16px 48px rgba(76,48,13,0.2);z-index:1">
+<img src="assets/problem-phone-2.png" alt="Health status on profile" style="position:absolute;bottom:0;right:0;height:min(440px,55vh);width:auto;border-radius:16px;display:block;box-shadow:0 20px 60px rgba(76,48,13,0.25);z-index:2">
 </div>
 </div>
 </div>
