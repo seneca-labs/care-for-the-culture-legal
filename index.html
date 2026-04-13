@@ -757,52 +757,53 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 </div>
 
-<!-- ROW 2: Two charts side by side -->
-<div style="display:flex;gap:1.5vw;flex:1;min-height:0">
-<!-- LEFT: Awareness by event (horizontal bars) -->
-<div style="flex:1;background:rgba(76,48,13,0.02);border-radius:8px;padding:1.2vw;display:flex;flex-direction:column">
-<p style="font-size:0.55rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--dim);font-weight:600;margin-bottom:1vh">Awareness by event</p>
-<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:0.8vh">
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--text);font-weight:600">Freddie NYC</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">42% on PrEP</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:42%;height:100%;background:var(--teal);border-radius:3px"></div></div></div>
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--text);font-weight:600">Freddie LA</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">38% on PrEP</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:38%;height:100%;background:var(--teal);border-radius:3px;opacity:0.8"></div></div></div>
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--text);font-weight:600">IDWeek ATL</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">68% on PrEP</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:68%;height:100%;background:var(--teal);border-radius:3px"></div></div></div>
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--text);font-weight:600">Pride SF</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">35% on PrEP</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:35%;height:100%;background:var(--teal);border-radius:3px;opacity:0.7"></div></div></div>
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--text);font-weight:600">Pride MIA</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">30% on PrEP</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:30%;height:100%;background:var(--teal);border-radius:3px;opacity:0.6"></div></div></div>
-</div>
-</div>
-<!-- RIGHT: Click-through comparison (grouped bars) -->
-<div style="flex:1;background:rgba(76,48,13,0.02);border-radius:8px;padding:1.2vw;display:flex;flex-direction:column">
-<p style="font-size:0.55rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--dim);font-weight:600;margin-bottom:1vh">Morning text CTR by PrEP answer</p>
-<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:0.8vh">
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--text);font-weight:600">"What's PrEP?"</p><p style="font-size:0.6rem;color:var(--orange);font-family:'JetBrains Mono',monospace;font-weight:600">71%</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:71%;height:100%;background:var(--orange);border-radius:3px"></div></div></div>
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--muted)">"Heard of it"</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">54%</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:54%;height:100%;background:var(--orange);border-radius:3px;opacity:0.65"></div></div></div>
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--muted)">"On it"</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">38%</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:38%;height:100%;background:var(--orange);border-radius:3px;opacity:0.4"></div></div></div>
-</div>
+<!-- ROW 2: Four vertical bar charts -->
+<div style="display:flex;gap:1.2vw;flex:1;min-height:0">
+
+<!-- CHART 1: Awareness by event — TEAL -->
+<div style="flex:1;background:rgba(76,48,13,0.02);border-radius:8px;padding:1vw 1vw 0.6vw;display:flex;flex-direction:column">
+<p style="font-size:0.5rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);font-weight:600;margin-bottom:0.5vh">Awareness by event</p>
+<div style="flex:1;display:flex;align-items:flex-end;gap:0.4vw;min-height:0">
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:42%;background:var(--teal);border-radius:3px 3px 0 0"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">NYC</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:38%;background:var(--teal);border-radius:3px 3px 0 0;opacity:0.8"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">LA</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:68%;background:var(--teal);border-radius:3px 3px 0 0"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">IDW</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:35%;background:var(--teal);border-radius:3px 3px 0 0;opacity:0.7"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">SF</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:30%;background:var(--teal);border-radius:3px 3px 0 0;opacity:0.6"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">MIA</p></div>
 </div>
 </div>
 
-<!-- ROW 3: Two more charts -->
-<div style="display:flex;gap:1.5vw;flex:1;min-height:0">
-<!-- LEFT: Completion rate comparison -->
-<div style="flex:1;background:rgba(76,48,13,0.02);border-radius:8px;padding:1.2vw;display:flex;flex-direction:column">
-<p style="font-size:0.55rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--dim);font-weight:600;margin-bottom:1vh">Completion rate by PrEP answer</p>
-<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:0.8vh">
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--muted)">"What's PrEP?"</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">64%</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:64%;height:100%;background:var(--teal);border-radius:3px"></div></div></div>
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--muted)">"Heard of it"</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">82%</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:82%;height:100%;background:var(--teal);border-radius:3px;opacity:0.7"></div></div></div>
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--text);font-weight:600">"On it"</p><p style="font-size:0.6rem;color:var(--teal);font-family:'JetBrains Mono',monospace;font-weight:600">91%</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:91%;height:100%;background:var(--teal);border-radius:3px"></div></div></div>
+<!-- CHART 2: Morning text CTR — ORANGE -->
+<div style="flex:1;background:rgba(76,48,13,0.02);border-radius:8px;padding:1vw 1vw 0.6vw;display:flex;flex-direction:column">
+<p style="font-size:0.5rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange);font-weight:600;margin-bottom:0.5vh">Morning text CTR</p>
+<div style="flex:1;display:flex;align-items:flex-end;gap:0.6vw;min-height:0">
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:71%;background:var(--orange);border-radius:3px 3px 0 0"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">New</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:54%;background:var(--orange);border-radius:3px 3px 0 0;opacity:0.7"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">Heard</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:38%;background:var(--orange);border-radius:3px 3px 0 0;opacity:0.45"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">On it</p></div>
 </div>
 </div>
-<!-- RIGHT: Follow-through + event comparison -->
-<div style="flex:1;background:rgba(76,48,13,0.02);border-radius:8px;padding:1.2vw;display:flex;flex-direction:column">
-<p style="font-size:0.55rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--dim);font-weight:600;margin-bottom:1vh">Resource follow-through by event</p>
-<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:0.8vh">
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--text);font-weight:600">IDWeek ATL</p><p style="font-size:0.6rem;color:var(--orange);font-family:'JetBrains Mono',monospace;font-weight:600">31%</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:31%;height:100%;background:var(--orange);border-radius:3px"></div></div></div>
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--muted)">Pride SF</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">24%</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:24%;height:100%;background:var(--orange);border-radius:3px;opacity:0.7"></div></div></div>
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--muted)">Freddie NYC</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">19%</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:19%;height:100%;background:var(--orange);border-radius:3px;opacity:0.55"></div></div></div>
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--muted)">Freddie LA</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">16%</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:16%;height:100%;background:var(--orange);border-radius:3px;opacity:0.4"></div></div></div>
-<div><div style="display:flex;justify-content:space-between;margin-bottom:2px"><p style="font-size:0.6rem;color:var(--muted)">Pride MIA</p><p style="font-size:0.6rem;color:var(--dim);font-family:'JetBrains Mono',monospace">12%</p></div><div style="height:14px;background:rgba(76,48,13,0.04);border-radius:3px;overflow:hidden"><div class="anim-bar" style="--bar-w:12%;height:100%;background:var(--orange);border-radius:3px;opacity:0.3"></div></div></div>
+
+<!-- CHART 3: Completion rate — AMBER -->
+<div style="flex:1;background:rgba(76,48,13,0.02);border-radius:8px;padding:1vw 1vw 0.6vw;display:flex;flex-direction:column">
+<p style="font-size:0.5rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--amber);font-weight:600;margin-bottom:0.5vh">Completion rate</p>
+<div style="flex:1;display:flex;align-items:flex-end;gap:0.6vw;min-height:0">
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:64%;background:var(--amber);border-radius:3px 3px 0 0"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">New</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:82%;background:var(--amber);border-radius:3px 3px 0 0;opacity:0.8"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">Heard</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:91%;background:var(--amber);border-radius:3px 3px 0 0"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">On it</p></div>
 </div>
 </div>
+
+<!-- CHART 4: Follow-through — SKIN/BROWN -->
+<div style="flex:1;background:rgba(76,48,13,0.02);border-radius:8px;padding:1vw 1vw 0.6vw;display:flex;flex-direction:column">
+<p style="font-size:0.5rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--midbrown);font-weight:600;margin-bottom:0.5vh">Follow-through</p>
+<div style="flex:1;display:flex;align-items:flex-end;gap:0.4vw;min-height:0">
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:31%;background:var(--skin);border-radius:3px 3px 0 0"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">IDW</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:24%;background:var(--skin);border-radius:3px 3px 0 0;opacity:0.8"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">SF</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:19%;background:var(--skin);border-radius:3px 3px 0 0;opacity:0.65"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">NYC</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:16%;background:var(--skin);border-radius:3px 3px 0 0;opacity:0.5"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">LA</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%"><div style="flex:1"></div><div style="width:100%;height:12%;background:var(--skin);border-radius:3px 3px 0 0;opacity:0.4"></div><p style="font-size:0.45rem;color:var(--dim);margin-top:3px;white-space:nowrap">MIA</p></div>
+</div>
+</div>
+
 </div>
 
 </div>
