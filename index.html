@@ -880,71 +880,80 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 </div>
 
-<!-- ==================== SLIDE 24: LEGAL, PRIVACY ==================== -->
-<div class="slide slide-top" data-slide="24" style="padding-top:4vh;padding-bottom:1vh">
+<!-- ==================== SLIDE: PRIVACY, DISCLOSURE ==================== -->
+<div class="slide slide-top" data-slide="24" style="padding-top:5vh;padding-bottom:1vh">
 <div class="stagger">
 <p class="label amber">LEGAL</p>
 <div class="gap-sm"></div>
-<h2>privacy</h2>
-<table class="legal-table" style="font-size:0.78rem">
-<thead><tr><th style="padding:8px 14px">Risk</th><th style="padding:8px 14px">How we address it</th></tr></thead>
+<h2>privacy, disclosure</h2>
+<p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:var(--muted);margin-top:0.3vh;white-space:nowrap">Preventing unintended exposure of PrEP status, identity, or presence.</p>
+<div class="gap-sm"></div>
+<table class="legal-table" style="font-size:0.88rem">
+<thead><tr><th>Risk</th><th>How we address it</th></tr></thead>
 <tbody>
 <tr>
-<td>PrEP status linked to photos</td>
-<td>The answer is never shown as text, only a color tint.</td>
+<td>PrEP status on photo cards</td>
+<td>The answer is never shown as text, only a color tint. The color key is never published on the card, the feed, or in print.</td>
 </tr>
 <tr>
-<td>Photos screenshotted from feed</td>
-<td>There is an explicit opt-in that says "your card will be visible."</td>
-</tr>
-<tr>
-<td>Unsolicited texts</td>
-<td>TCPA language appears before sending, and the morning text has its own opt-in.</td>
-</tr>
-<tr>
-<td>Prevention question feels invasive</td>
-<td>"Prefer not to say" is equal-sized, not a dismissal.</td>
-</tr>
-<tr>
-<td>PrEP status exposed via photo</td>
-<td>The answer is only shown as a color tint, never as text.</td>
-</tr>
-<tr>
-<td>User unaware before engaging</td>
-<td>The onboarding explains everything before any input.</td>
-</tr>
-<tr>
-<td>Card tint reveals answer</td>
-<td>The color is subtle and the key only appears during the data flow, never on the feed or in print.</td>
+<td>Screenshotted tinted photos</td>
+<td>Explicit opt-in before joining the feed ("your card will be visible, you can choose private instead"). Screenshots blocked on the web app.</td>
 </tr>
 <tr>
 <td>Morning text could out a user</td>
-<td>Neutral sender name, neutral preview text, explicit outing warning in the opt-in, option to send to a different number.</td>
+<td>Neutral sender name, neutral preview text, explicit outing warning in the opt-in, option to send to a different number than the one used at the kiosk.</td>
 </tr>
 <tr>
 <td>Bystanders in photos</td>
-<td>Venue entry signage discloses photography. Takedown process for any non-participant. Blur-on-request available.</td>
+<td>Venue entry signage discloses photography. Takedown process for any non-participant who recognizes themselves.</td>
 </tr>
 <tr>
-<td>No biometric processing</td>
-<td>The photo pipeline applies a color LUT only. No face detection, no landmark extraction, no embeddings.</td>
-</tr>
-<tr>
-<td>Minors at non-21+ venues</td>
-<td>An 18+ age gate runs at the kiosk for any non-21+ activation. Declined users still see the national story and can opt out cleanly.</td>
-</tr>
-<tr>
-<td>PrEP answer is CPRA sensitive personal information</td>
-<td>Treated as health and sexual-orientation SPI. Flow designed around the right to limit use and disclosure.</td>
+<td>User wants out mid-event</td>
+<td>Tap "remove my photo" on any kiosk or ask a Freddie staffer. If a phone was provided, a one-tap removal link is texted to it. Photo is pulled from every feed, morning text canceled, session deleted immediately.</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
+
+<!-- ==================== SLIDE: PRIVACY, COLLECTION ==================== -->
+<div class="slide slide-top" data-slide="25" style="padding-top:5vh;padding-bottom:1vh">
+<div class="stagger">
+<p class="label amber">LEGAL</p>
+<div class="gap-sm"></div>
+<h2>privacy, collection</h2>
+<p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:var(--muted);margin-top:0.3vh;white-space:nowrap">Ensuring users know what they're giving and why.</p>
+<div class="gap-sm"></div>
+<table class="legal-table" style="font-size:0.88rem">
+<thead><tr><th>Risk</th><th>How we address it</th></tr></thead>
+<tbody>
+<tr>
+<td>User unaware before engaging</td>
+<td>The onboarding explains everything before any input. "Prefer not to say" is equal-sized with other options, not a dismissal.</td>
+</tr>
+<tr>
+<td>Prevention question feels invasive</td>
+<td>Equal-weight opt-out. Users who decline still see the national story and get a photo card. No penalty for skipping.</td>
+</tr>
+<tr>
+<td>Unsolicited texts</td>
+<td>TCPA language appears before the number is entered. The morning text has its own opt-in separate from feed participation. Reply STOP to unsubscribe.</td>
+</tr>
+<tr>
+<td>Minors at non-21+ venues</td>
+<td>An 18+ age gate runs at the kiosk for Pride and conference activations. Declined users still see the national story and can opt out cleanly.</td>
+</tr>
+<tr>
+<td>PrEP answer as CPRA sensitive personal information</td>
+<td>Treated as health and sexual-orientation SPI under CPRA. Flow designed around the right to limit use and disclosure.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 <!-- ==================== SLIDE: HIV CONFIDENTIALITY ==================== -->
-<div class="slide" data-slide="25">
+<div class="slide" data-slide="27">
 <div class="stagger">
 <p class="label amber">LEGAL</p>
 <div class="gap-sm"></div>
@@ -1000,7 +1009,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 
 <!-- ==================== SLIDE 27: OPT-IN / OPT-OUT LANGUAGE ==================== -->
-<div class="slide slide-top" data-slide="27" style="padding-top:6vh;padding-bottom:4vh">
+<div class="slide slide-top" data-slide="30" style="padding-top:6vh;padding-bottom:4vh">
 <div class="stagger">
 <p class="label amber">LEGAL</p>
 <div class="gap-sm"></div>
@@ -1127,7 +1136,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 
 
 <!-- ==================== SLIDE 31: THANK YOU ==================== -->
-<div class="slide" data-slide="30" data-dark="true" style="background:var(--darkbrown);justify-content:center;align-items:flex-start;padding:12vh 8vw">
+<div class="slide" data-slide="31" data-dark="true" style="background:var(--darkbrown);justify-content:center;align-items:flex-start;padding:12vh 8vw">
 <div class="stagger">
 <h1 style="font-size:clamp(5rem,10vw,10rem);color:var(--lime);line-height:0.95">Thank<br>You.</h1>
 <div style="height:6vh"></div>
@@ -1141,7 +1150,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <button class="nav-btn" onclick="navigate(-1)">&#8592;</button>
 <button class="nav-btn" onclick="navigate(1)">&#8594;</button>
 </div>
-<div class="counter" id="counter">1 / 31</div>
+<div class="counter" id="counter">1 / 32</div>
 
 <script>
 (function(){
