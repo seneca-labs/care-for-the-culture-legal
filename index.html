@@ -17,7 +17,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(
 .deck{width:100vw;height:100vh;position:relative}
 .slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:12vh 8vw 10vh;opacity:0;pointer-events:none;transition:opacity 400ms ease}
 .slide.active{opacity:1;pointer-events:all}
-.slide-top{justify-content:flex-start;padding-top:10vh;overflow-y:auto}
+.slide-top{justify-content:flex-start;padding-top:10vh;overflow:hidden}
 .counter{position:fixed;bottom:2.5vh;right:3vw;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);z-index:100;letter-spacing:1px;opacity:0.4}
 .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--coral),var(--lime));z-index:100;transition:width 400ms ease}
 
@@ -469,7 +469,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
   <div>
     <div class="card-sm">
       <h3 style="margin-bottom:1vh">The photo card</h3>
-      <p style="font-size:0.95rem;color:var(--muted);line-height:1.6;max-width:none">Your photo, tinted by your prevention journey answer. Green if you're on PrEP. Orange if you've heard of it. Warm if you're just learning. Neutral if you opted out. The color is subtle enough that it only means something if you know what it means. Underneath: your node, your data, the map. Vertical format. Texted immediately. Shareable to IG stories. It looks like a tinted party photo, not a health campaign.</p>
+      <p style="font-size:0.95rem;color:var(--muted);line-height:1.6;max-width:none">Your photo, tinted by your prevention journey answer. Green if you're on PrEP. Orange if you've heard of it. Warm if you're just learning. Neutral if you opted out. The color is subtle and never published as a key on the card, the feed, or the print. Underneath: your node, your data, the map. Vertical format. Texted immediately. Shareable to IG stories. It looks like a tinted party photo, not a health campaign.</p>
     </div>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1vw">
@@ -704,7 +704,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <p style="font-size:0.85rem;color:var(--muted)">Access is scoped per role</p>
 </div>
 <div style="background:var(--surface-light);border-radius:8px;padding:0.8vw 1vw;border-left:3px solid var(--dim)">
-<p style="font-size:0.85rem;color:var(--muted)">Only aggregate reports go to Gilead</p>
+<p style="font-size:0.85rem;color:var(--muted)">Only aggregate reports go to your team</p>
 </div>
 </div>
 </div>
@@ -866,14 +866,13 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 
 <!-- ==================== SLIDE 24: LEGAL, PRIVACY ==================== -->
-<div class="slide slide-top" data-slide="24">
+<div class="slide slide-top" data-slide="24" style="padding-top:5vh;padding-bottom:2vh">
 <div class="stagger">
 <p class="label amber">LEGAL</p>
 <div class="gap-sm"></div>
 <h2>privacy</h2>
 <div class="gap"></div>
-<div style="display:grid;grid-template-columns:1fr auto;gap:5vw;align-items:start">
-<table class="legal-table" style="font-size:0.95rem">
+<table class="legal-table" style="font-size:0.82rem">
 <thead><tr><th>Risk</th><th>How we address it</th></tr></thead>
 <tbody>
 <tr>
@@ -926,7 +925,6 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </tr>
 </tbody>
 </table>
-<img src="assets/legal-privacy.png" alt="Legal privacy" style="height:min(500px,60vh);width:auto;border-radius:16px;border:2px solid #ffffff;object-fit:contain;display:block">
 </div>
 </div>
 </div>
@@ -950,7 +948,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 <div class="card" style="border-top:4px solid var(--teal)">
 <p style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--teal);font-weight:600;margin-bottom:1vh">OUR POSTURE</p>
-<p style="font-size:0.95rem;color:var(--muted);line-height:1.6">We treat PrEP status as protected health information for the purposes of this experience, regardless of whether any given statute technically requires it. That's why the card tint is color only, the answer is never shown as text, and the color key lives only inside the data flow.</p>
+<p style="font-size:0.95rem;color:var(--muted);line-height:1.6">We treat PrEP status as protected health information for the purposes of this experience, regardless of whether any given statute technically requires it. That's why the card tint is color only, the answer is never shown as text, and the key is never printed or published.</p>
 </div>
 </div>
 </div>
@@ -1042,7 +1040,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 <div class="card-sm" style="border-left:3px solid var(--teal)">
 <p style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);font-weight:600;margin-bottom:0.5vh">24-HOUR PURGE</p>
-<p style="font-size:0.88rem;color:var(--muted);line-height:1.5">Zip codes, PrEP answers, and photos deleted within 24 hours. Phone numbers deleted after morning text.</p>
+<p style="font-size:0.88rem;color:var(--muted);line-height:1.5">Zip codes, PrEP answers, and photos deleted within 24 hours. Phone numbers removed from user-facing systems after morning text, retained only in isolated TCPA consent ledger.</p>
 </div>
 <div class="card-sm" style="border-left:3px solid var(--teal)">
 <p style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);font-weight:600;margin-bottom:0.5vh">NO PII CO-LOCATION</p>
@@ -1062,7 +1060,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <div class="card-sm" style="border-left:3px solid var(--coral)">
 <p style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--coral);font-weight:600;margin-bottom:0.5vh">BREACH RESPONSE</p>
 <p style="font-size:0.88rem;color:var(--muted);line-height:1.5"><strong style="color:var(--text)">Detection:</strong> Real-time cloud monitoring.</p>
-<p style="font-size:0.88rem;color:var(--muted);line-height:1.5"><strong style="color:var(--text)">Notification:</strong> Gilead within 24h of confirmed breach.</p>
+<p style="font-size:0.88rem;color:var(--muted);line-height:1.5"><strong style="color:var(--text)">Notification:</strong> Your team within 24h of confirmed breach.</p>
 <p style="font-size:0.88rem;color:var(--muted);line-height:1.5"><strong style="color:var(--text)">Forensics:</strong> Third-party audit within 48h.</p>
 </div>
 </div>
