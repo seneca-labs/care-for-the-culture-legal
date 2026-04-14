@@ -620,7 +620,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 <div class="card" style="border-top:4px solid var(--coral)">
 <p style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--coral);font-weight:600;margin-bottom:1vh">WHAT HAS TO HAPPEN FIRST</p>
-<p style="font-size:0.95rem;color:var(--muted);line-height:1.6">Every expansion surface requires its own MLR review, its own state HIV law read, its own venue and consent posture. The items in the Legal section set the gate. Nothing ships beyond NYC until your team signs off on each one.</p>
+<p style="font-size:0.95rem;color:var(--muted);line-height:1.6">HIV confidentiality statutes vary by state. Biometric regimes vary by city and state. Every expansion surface requires its own MLR review, its own state law read, its own consent posture. Nothing ships beyond NYC until your team signs off on each.</p>
 </div>
 </div>
 </div>
@@ -818,44 +818,20 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <h2>items we've identified</h2>
 <p style="font-size:clamp(1rem,1.2vw,1.2rem);color:var(--muted);margin-top:0.3vh;white-space:nowrap">Frameworks we know apply. We need your team's guidance on scope, process, and ownership.</p>
 <div class="gap"></div>
-<div style="display:flex;flex-direction:column;gap:1.2vh">
-<div style="border-bottom:1px solid var(--border);padding-bottom:1vh">
-<p style="font-size:0.95rem;font-weight:600;color:var(--text)">FDA OPDP, branded vs unbranded</p>
-<p style="font-size:0.85rem;color:var(--muted);line-height:1.5">OPDP regulates prescription drug promotion. We're designing this as unbranded disease awareness. We need your read on whether any resource link, SMS, or printed card could cross into branded territory, and what fair balance would look like if it does.</p>
-</div>
-<div style="border-bottom:1px solid var(--border);padding-bottom:1vh">
-<p style="font-size:0.95rem;font-weight:600;color:var(--text)">MLR Review</p>
-<p style="font-size:0.85rem;color:var(--muted);line-height:1.5">Medical, Legal, Regulatory review of every user-facing surface. We need guidance on submission format, which surfaces require review, and turnaround so we can schedule around it.</p>
-</div>
-<div style="border-bottom:1px solid var(--border);padding-bottom:1vh">
-<p style="font-size:0.95rem;font-weight:600;color:var(--text)">Anti-Kickback Statute, the Freddie pathway</p>
-<p style="font-size:0.85rem;color:var(--muted);line-height:1.5">Freddie is a telehealth PrEP provider that prescribes your team's products. That makes the pathway sensitive under AKS and the PhRMA Code. We'd like your commercial compliance team's read on whether the photo card, party context, or morning-text resources constitute items of value.</p>
-</div>
-<div style="border-bottom:1px solid var(--border);padding-bottom:1vh">
-<p style="font-size:0.95rem;font-weight:600;color:var(--text)">Sunshine Act / Open Payments</p>
-<p style="font-size:0.85rem;color:var(--muted);line-height:1.5">We need your team's read on whether any element of the activation (Freddie's medical staff involvement, HCPs at conference deployments, the photo card itself) triggers reporting.</p>
-</div>
-<div style="border-bottom:1px solid var(--border);padding-bottom:1vh">
-<p style="font-size:0.95rem;font-weight:600;color:var(--text)">State HIV Confidentiality, NY 27-F and peers</p>
-<p style="font-size:0.85rem;color:var(--muted);line-height:1.5">NY Public Health Law Article 27-F applies to the NYC pilot. We need a legal read on whether "I'm on PrEP" falls inside its scope, and a state-by-state memo before expansion.</p>
-</div>
-<div style="border-bottom:1px solid var(--border);padding-bottom:1vh">
-<p style="font-size:0.95rem;font-weight:600;color:var(--text)">Biometric Privacy, NYC and LA first</p>
-<p style="font-size:0.85rem;color:var(--muted);line-height:1.5">NYC biometric identifier law and California's CPRA apply to the pilot cities. Our photo pipeline applies a color LUT only. No face detection, no landmark extraction, no embeddings. We can provide a technical attestation in whatever form your team prefers.</p>
-</div>
-<div style="border-bottom:1px solid var(--border);padding-bottom:1vh">
-<p style="font-size:0.95rem;font-weight:600;color:var(--text)">DPIA, Data Protection Impact Assessment</p>
-<p style="font-size:0.85rem;color:var(--muted);line-height:1.5">We've mapped the data flow and risks. We need your privacy team's template and sign-off process.</p>
-</div>
-<div style="border-bottom:1px solid var(--border);padding-bottom:1vh">
-<p style="font-size:0.95rem;font-weight:600;color:var(--text)">TCPA, consent standard and ledger</p>
-<p style="font-size:0.85rem;color:var(--muted);line-height:1.5">Whether the morning text is informational or marketing under TCPA. An informational text ("here's your photo") and a marketing text (linking to PrEP resources) have different consent standards. Also whether to use your existing consent-ledger vendor or stand up our own.</p>
-</div>
-<div>
-<p style="font-size:0.95rem;font-weight:600;color:var(--text)">HIPAA Non-Applicability</p>
-<p style="font-size:0.85rem;color:var(--muted);line-height:1.5">Our read is that we are not a covered entity or business associate, and the data collected is not PHI. We'll prepare a position paper articulating the analysis, for your counsel's concurrence.</p>
-</div>
-</div>
+<table class="legal-table" style="font-size:0.88rem">
+<thead><tr><th>Framework</th><th>Status & what we need</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--coral)">FDA OPDP</td><td>Designing as unbranded disease awareness. Need your read on whether any link, SMS, or card crosses into branded territory.</td></tr>
+<tr><td style="color:var(--coral)">MLR Review</td><td>Every user-facing surface. Need submission format, scope, and turnaround.</td></tr>
+<tr><td style="color:var(--coral)">Anti-Kickback (AKS)</td><td>Freddie prescribes your products. Need commercial compliance read on whether card, party context, or morning text constitute items of value.</td></tr>
+<tr><td style="color:var(--orange)">Sunshine Act</td><td>Need your read on whether any activation element triggers Open Payments reporting.</td></tr>
+<tr><td style="color:var(--orange)">HIV Confidentiality</td><td>NY 27-F may apply to the NYC pilot. Need legal read on PrEP status scope, plus state-by-state memo before expansion.</td></tr>
+<tr><td style="color:var(--orange)">Biometric Privacy</td><td>NYC Local Law 3 exempts photos not analyzed to ID individuals. We sit inside the exemption. BIPA/CUBI apply only on IL/TX expansion.</td></tr>
+<tr><td style="color:var(--teal)">DPIA</td><td>Data flow and risks mapped. Need your privacy team's template and sign-off process.</td></tr>
+<tr><td style="color:var(--teal)">TCPA</td><td>Is the morning text informational or marketing? Different consent standards. Also: your ledger vendor or ours?</td></tr>
+<tr><td style="color:var(--teal)">HIPAA</td><td>Our read: not a covered entity, not PHI. We'll prepare a position paper for your counsel's concurrence.</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -944,6 +920,10 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <td>Minors at non-21+ venues</td>
 <td>An 18+ age gate runs at the kiosk for any non-21+ activation. Declined users still see the national story and can opt out cleanly.</td>
 </tr>
+<tr>
+<td>PrEP answer is CPRA sensitive personal information</td>
+<td>Treated as health and sexual-orientation SPI. Flow designed around the right to limit use and disclosure.</td>
+</tr>
 </tbody>
 </table>
 <img src="assets/legal-privacy.png" alt="Legal privacy" style="height:min(500px,60vh);width:auto;border-radius:16px;border:2px solid #ffffff;object-fit:contain;display:block">
@@ -962,7 +942,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <div class="g3" style="gap:2.5vw;align-items:start">
 <div class="card" style="border-top:4px solid var(--coral)">
 <p style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--coral);font-weight:600;margin-bottom:1vh">NY PUBLIC HEALTH LAW 27-F</p>
-<p style="font-size:0.95rem;color:var(--muted);line-height:1.6">New York's HIV confidentiality statute applies to the NYC pilot. It defines HIV-related information broadly and carries its own penalties. Whether "I'm on PrEP" falls inside its scope needs a formal legal read from NY healthcare counsel before the pilot.</p>
+<p style="font-size:0.95rem;color:var(--muted);line-height:1.6">New York's HIV confidentiality statute may apply to the NYC pilot. Two open questions need a formal read from NY healthcare counsel. Whether the kiosk operator counts as a provider of a "health or social service" under the statute. And whether "I'm on PrEP" falls inside its definition of HIV related information, which is built around testing and diagnosis. We're designing as if the answer to both is yes.</p>
 </div>
 <div class="card" style="border-top:4px solid var(--orange)">
 <p style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--orange);font-weight:600;margin-bottom:1vh">STATE-BY-STATE MEMO</p>
