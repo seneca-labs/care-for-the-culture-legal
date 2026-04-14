@@ -164,10 +164,14 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 @keyframes dot-pulse{0%{opacity:0;transform:scale(0)}10%{opacity:0.85;transform:scale(1)}80%{opacity:0.85;transform:scale(1)}90%{opacity:0.6;transform:scale(0.9)}100%{opacity:0.85;transform:scale(1)}}
 
 /* legal subtitle animation */
-.legal-sub.visible{opacity:1!important;max-height:5vh!important}
-.legal-slide.legal-active .stagger>*:not(h2):not(.label):not(.gap-sm):not(.legal-sub):not(.gap){opacity:0.25;transition:opacity 500ms ease}
+.legal-sub{max-width:none!important}
+.legal-sub.visible{opacity:1!important;max-height:8vh!important}
+.legal-slide.legal-active p:not(.legal-sub):not(.label){opacity:0.25;transition:opacity 500ms ease}
+.legal-slide.legal-active h3{opacity:0.25;transition:opacity 500ms ease}
+.legal-slide.legal-active .small{opacity:0.25;transition:opacity 500ms ease}
+.legal-slide.legal-active h2{opacity:1!important}
 .legal-slide.legal-active img{opacity:1!important}
-.legal-slide.legal-active h2{transition:color 500ms ease}
+.legal-slide.legal-active .legal-sub{opacity:1!important}
 </style>
 </head>
 <body>
@@ -395,7 +399,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <p class="label teal">DEMO</p>
 <div class="gap-sm"></div>
 <h2>onboarding</h2>
-<p class="legal-sub" id="legal-sub-8" style="font-size:clamp(0.9rem,1.1vw,1.1rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease"><span style="color:#1B3A5C;font-weight:700">Legal:</span> Consent architecture, TCPA pre-capture, and an 18+ age gate for non-21+ venues. We'll return to this in the Privacy section.</p>
+<p class="legal-sub" id="legal-sub-8" style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease;max-width:none"><span style="color:#1B3A5C;font-weight:700">Legal:</span> Consent architecture, TCPA pre-capture, and an 18+ age gate for non-21+ venues. We'll return to this in the Privacy section.</p>
 <div class="gap"></div>
 <div style="display:grid;grid-template-columns:auto 1fr;gap:4vw;align-items:center">
 <img src="assets/onboarding.gif" alt="Feed onboarding" style="height:min(500px,62vh);width:auto;border-radius:16px;border:2px solid #ffffff;display:block">
@@ -414,7 +418,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <p class="label teal">DATA</p>
 <div class="gap-sm"></div>
 <h2>close the gap</h2>
-<p class="legal-sub" id="legal-sub-9" style="font-size:clamp(0.9rem,1.1vw,1.1rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease"><span style="color:#1B3A5C;font-weight:700">Legal:</span> Unbranded disease awareness with no product names. MLR scope is one of the items we need your guidance on.</p>
+<p class="legal-sub" id="legal-sub-9" style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease;max-width:none"><span style="color:#1B3A5C;font-weight:700">Legal:</span> Unbranded disease awareness with no product names. MLR scope is one of the items we need your guidance on.</p>
 <div class="gap"></div>
 <div style="display:grid;grid-template-columns:auto 1fr;gap:4vw;align-items:center">
 <img src="assets/nationalslider.gif" alt="PrEP slider" style="height:min(500px,62vh);width:auto;border-radius:16px;border:2px solid #ffffff;display:block">
@@ -434,7 +438,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <p class="label teal">DATA</p>
 <div class="gap-sm"></div>
 <h2>see your city &amp; state</h2>
-<p class="legal-sub" id="legal-sub-10" style="font-size:clamp(0.9rem,1.1vw,1.1rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease"><span style="color:#1B3A5C;font-weight:700">Legal:</span> AIDSVu source licensing. "Per 100K" and "proportional, not geographic" disclosures appear on every map.</p>
+<p class="legal-sub" id="legal-sub-10" style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease;max-width:none"><span style="color:#1B3A5C;font-weight:700">Legal:</span> AIDSVu source licensing. "Per 100K" and "proportional, not geographic" disclosures appear on every map.</p>
 <div class="gap"></div>
 <div style="display:grid;grid-template-columns:auto 1fr;gap:4vw;align-items:center">
 <img src="assets/stateandcitypage.gif" alt="County data" style="height:min(500px,62vh);width:auto;border-radius:16px;border:2px solid #ffffff;display:block">
@@ -454,7 +458,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <p class="label teal">DATA</p>
 <div class="gap-sm"></div>
 <h2>close your gap</h2>
-<p class="legal-sub" id="legal-sub-11" style="font-size:clamp(0.9rem,1.1vw,1.1rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease"><span style="color:#1B3A5C;font-weight:700">Legal:</span> Identity-level data stays aggregate. No PII co-location. More on this in Privacy.</p>
+<p class="legal-sub" id="legal-sub-11" style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease;max-width:none"><span style="color:#1B3A5C;font-weight:700">Legal:</span> Identity-level data stays aggregate. No PII co-location. More on this in Privacy.</p>
 <div class="gap-sm"></div>
 
 </div>
@@ -474,7 +478,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <p class="label teal">SIGNALS</p>
 <div class="gap-sm"></div>
 <h2>what you take home</h2>
-<p style="font-size:clamp(0.9rem,1.1vw,1.1rem);color:var(--dim);margin-top:0.5vh;font-weight:400"><span style="color:#1B3A5C;font-weight:700">Legal:</span> The tint is color only, never text. Screenshot risk, bystanders in frame, and NY Public Health Law 27-F all get their own treatment later.</p>
+<p style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:var(--dim);margin-top:0.5vh;font-weight:400;max-width:none"><span style="color:#1B3A5C;font-weight:700">Legal:</span> The tint is color only, never text. Screenshot risk, bystanders in frame, and NY Public Health Law 27-F all get their own treatment later.</p>
 <div class="gap"></div>
 <div style="display:grid;grid-template-columns:2fr 3fr;gap:3vw;align-items:start">
   <div>
@@ -484,22 +488,22 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
     </div>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1vw">
-    <div style="position:relative;border-radius:12px;overflow:hidden;height:42vh">
+    <div style="position:relative;border-radius:12px;overflow:hidden;height:28vh">
       <img src="assets/photo-1.png" style="width:100%;height:100%;object-fit:cover;display:block">
       <div style="position:absolute;inset:0;background:rgba(124,181,24,0.35);mix-blend-mode:multiply"></div>
       <span style="position:absolute;bottom:10px;left:12px;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:rgba(238,234,217,0.9);letter-spacing:0.06em">10451</span>
     </div>
-    <div style="position:relative;border-radius:12px;overflow:hidden;height:42vh">
+    <div style="position:relative;border-radius:12px;overflow:hidden;height:28vh">
       <img src="assets/photo-2.png" style="width:100%;height:100%;object-fit:cover;display:block">
       <div style="position:absolute;inset:0;background:rgba(246,182,100,0.35);mix-blend-mode:multiply"></div>
       <span style="position:absolute;bottom:10px;left:12px;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:rgba(238,234,217,0.9);letter-spacing:0.06em">90001</span>
     </div>
-    <div style="position:relative;border-radius:12px;overflow:hidden;height:42vh">
+    <div style="position:relative;border-radius:12px;overflow:hidden;height:28vh">
       <img src="assets/photo-3.png" style="width:100%;height:100%;object-fit:cover;display:block">
       <div style="position:absolute;inset:0;background:rgba(232,133,58,0.35);mix-blend-mode:multiply"></div>
       <span style="position:absolute;bottom:10px;left:12px;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:rgba(238,234,217,0.9);letter-spacing:0.06em">11221</span>
     </div>
-    <div style="position:relative;border-radius:12px;overflow:hidden;height:42vh">
+    <div style="position:relative;border-radius:12px;overflow:hidden;height:28vh">
       <img src="assets/photo-4.png" style="width:100%;height:100%;object-fit:cover;display:block">
       <div style="position:absolute;inset:0;background:rgba(76,48,13,0.25);mix-blend-mode:multiply"></div>
       <span style="position:absolute;bottom:10px;left:12px;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:rgba(238,234,217,0.9);letter-spacing:0.06em">90011</span>
@@ -515,9 +519,9 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <div class="stagger">
 <p class="label teal">PERSONALIZATION</p>
 <div class="gap-sm"></div>
-<h2>your answer changes the experience</h2>
+<h2 style="font-size:clamp(2.2rem,4.2vw,4.2rem)">your answer changes the experience</h2>
 <div class="gap-sm"></div>
-<p class="legal-sub" id="legal-sub-13" style="font-size:clamp(0.9rem,1.1vw,1.1rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease"><span style="color:#1B3A5C;font-weight:700">Legal:</span> The storytelling layer is disease awareness only. No product mentions in any of the four variants. MLR review applies to every copy path.</p>
+<p class="legal-sub" id="legal-sub-13" style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease;max-width:none"><span style="color:#1B3A5C;font-weight:700">Legal:</span> The storytelling layer is disease awareness only. No product mentions in any of the four variants. MLR review applies to every copy path.</p>
 <div class="g4" style="align-items:start">
 <!-- COLUMN 1: I'M ON IT (green/teal) -->
 <div class="answer-col" style="display:flex;flex-direction:column;margin-top:0">
@@ -574,7 +578,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <p class="label teal">INTERFACE</p>
 <div class="gap-sm"></div>
 <h2>the home screen</h2>
-<p class="legal-sub" id="legal-sub-14" style="font-size:clamp(0.9rem,1.1vw,1.1rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease"><span style="color:#1B3A5C;font-weight:700">Legal:</span> Feed visibility is opt-in. We have a takedown process for bystanders and participants. More in Privacy.</p>
+<p class="legal-sub" id="legal-sub-14" style="font-size:clamp(0.95rem,1.15vw,1.15rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease;max-width:none"><span style="color:#1B3A5C;font-weight:700">Legal:</span> Feed visibility is opt-in. We have a takedown process for bystanders and participants. More in Privacy.</p>
 <div class="gap"></div>
 <div class="g3" style="align-items:start">
 <div style="display:flex;flex-direction:column;margin-top:0">
