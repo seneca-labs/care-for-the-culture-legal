@@ -164,7 +164,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 @keyframes dot-pulse{0%{opacity:0;transform:scale(0)}10%{opacity:0.85;transform:scale(1)}80%{opacity:0.85;transform:scale(1)}90%{opacity:0.6;transform:scale(0.9)}100%{opacity:0.85;transform:scale(1)}}
 
 /* legal subtitle animation */
-.legal-sub.visible{opacity:1!important;max-height:3vh!important}
+.legal-sub.visible{opacity:1!important;max-height:5vh!important}
 .legal-slide.legal-active .stagger>*:not(h2):not(.label):not(.gap-sm):not(.legal-sub):not(.gap){opacity:0.25;transition:opacity 500ms ease}
 .legal-slide.legal-active img{opacity:1!important}
 .legal-slide.legal-active h2{transition:color 500ms ease}
@@ -449,7 +449,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 
 <!-- ==================== SLIDE 11: SEE YOUR NEIGHBORHOOD ==================== -->
-<div class="slide legal-slide" data-legal-slide="11 slide-top" data-slide="11" style="padding-top:6vh;padding-bottom:4vh">
+<div class="slide legal-slide" data-legal-slide="11" data-slide="11" style="padding-top:6vh;padding-bottom:4vh">
 <div class="stagger">
 <p class="label teal">DATA</p>
 <div class="gap-sm"></div>
@@ -469,12 +469,12 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 
 <!-- ==================== SLIDE 12: WHAT YOU TAKE HOME ==================== -->
-<div class="slide legal-slide" data-legal-slide="12 slide-top" data-slide="12">
+<div class="slide" data-slide="12">
 <div class="stagger">
 <p class="label teal">SIGNALS</p>
 <div class="gap-sm"></div>
 <h2>what you take home</h2>
-<p class="legal-sub" id="legal-sub-12" style="font-size:clamp(0.9rem,1.1vw,1.1rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease"><span style="color:#1B3A5C;font-weight:700">Legal:</span> The tint is color only, never text. Screenshot risk, bystanders in frame, and NY Public Health Law 27-F all get their own treatment later.</p>
+<p style="font-size:clamp(0.9rem,1.1vw,1.1rem);color:var(--dim);margin-top:0.5vh;font-weight:400"><span style="color:#1B3A5C;font-weight:700">Legal:</span> The tint is color only, never text. Screenshot risk, bystanders in frame, and NY Public Health Law 27-F all get their own treatment later.</p>
 <div class="gap"></div>
 <div style="display:grid;grid-template-columns:2fr 3fr;gap:3vw;align-items:start">
   <div>
@@ -511,13 +511,13 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 </div>
 
 <!-- ==================== SLIDE 13: ANSWERS + SMS PREVIEW ==================== -->
-<div class="slide slide-top" data-slide="13" id="answers-slide" style="padding-top:6vh;padding-bottom:4vh">
+<div class="slide legal-slide slide-top" data-legal-slide="13" data-slide="13" id="answers-slide" style="padding-top:6vh;padding-bottom:4vh">
 <div class="stagger">
 <p class="label teal">PERSONALIZATION</p>
 <div class="gap-sm"></div>
 <h2>your answer changes the experience</h2>
 <div class="gap-sm"></div>
-<p style="font-size:clamp(0.9rem,1.1vw,1.1rem);color:var(--dim);margin-top:0.5vh;font-weight:400"><span style="color:#1B3A5C;font-weight:700">Legal:</span> The storytelling layer is disease awareness only. No product mentions in any of the four variants. MLR review applies to every copy path.</p>
+<p class="legal-sub" id="legal-sub-13" style="font-size:clamp(0.9rem,1.1vw,1.1rem);color:var(--dim);margin-top:0.5vh;font-weight:400;opacity:0;max-height:0;overflow:hidden;transition:opacity 500ms ease,max-height 500ms ease"><span style="color:#1B3A5C;font-weight:700">Legal:</span> The storytelling layer is disease awareness only. No product mentions in any of the four variants. MLR review applies to every copy path.</p>
 <div class="g4" style="align-items:start">
 <!-- COLUMN 1: I'M ON IT (green/teal) -->
 <div class="answer-col" style="display:flex;flex-direction:column;margin-top:0">
@@ -765,7 +765,7 @@ p,.body{font-size:clamp(1.15rem,1.45vw,1.45rem);line-height:1.7;color:var(--mute
 <div class="g2" style="gap:2.5vw;align-items:start">
 <div class="card-sm" style="border-left:3px solid var(--teal)">
 <p style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);font-weight:600;margin-bottom:0.8vh">CONTROLLER & PROCESSORS (PROPOSED)</p>
-<p style="font-size:0.9rem;color:var(--muted);line-height:1.6">Controller: your team. Processors: us (experience and backend) and Majority (client services and activation). Subprocessors: cloud host (GCP or AWS), SMS vendor, print vendor. Full list on request. This is our proposed position. Redlines welcome.</p>
+<p style="font-size:0.9rem;color:var(--muted);line-height:1.6">Controller: your team<br>Processor: our team<br>Subprocessors: cloud host (GCP or AWS), SMS vendor, print vendor, & potential others<br><br>This is our proposed position. Redlines welcome.</p>
 </div>
 <div class="card-sm" style="border-left:3px solid var(--orange)">
 <p style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--orange);font-weight:600;margin-bottom:0.8vh">SESSION LINKAGE</p>
