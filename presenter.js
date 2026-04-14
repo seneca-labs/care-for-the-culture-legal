@@ -9,36 +9,48 @@ document.addEventListener('DOMContentLoaded', function(){
   // ===== AUDIENCE MODE =====
   if (mode === 'audience') {
     var ch = new BroadcastChannel(CH_AUDIENCE);
-    ch.postMessage({ type: 'ready' });
     var slides = document.querySelectorAll('.slide');
 
-    function jumpTo(n) {
-      if (n < 0 || n >= slides.length) return;
-      // Use the existing show function if available
-      if (typeof window._showSlide === 'function') {
-        window._showSlide(n);
-      } else {
-        slides.forEach(function(s){ s.classList.remove('active'); });
-        document.querySelectorAll('.legal-slide').forEach(function(s){ s.classList.remove('legal-active'); });
-        document.querySelectorAll('.legal-sub').forEach(function(s){ s.classList.remove('visible'); });
-        slides[n].classList.add('active');
-        var counter = document.getElementById('counter');
-        var progress = document.getElementById('progress');
-        if (counter) counter.textContent = (n+1) + ' / ' + slides.length;
-        if (progress) progress.style.width = ((n+1)/slides.length*100) + '%';
-        slides[n].querySelectorAll('img[src$=".gif"]').forEach(function(img){
-          var src = img.src; img.src = ''; img.src = src;
-        });
-      }
+    function getCurrent() {
+      return Array.from(slides).findIndex(function(s){ return s.classList.contains('active'); });
+    }
+
+    function reportState() {
+      ch.postMessage({ type: 'state', slide: getCurrent() });
     }
 
     ch.onmessage = function(e) {
-      if (e.data.type === 'goto') jumpTo(e.data.slide);
+      // 'nav' = call the existing navigate() which handles all sub-step animations
+      if (e.data.type === 'nav' && typeof window.navigate === 'function') {
+        window.navigate(e.data.dir);
+        // Report back after a short delay so animations have started
+        setTimeout(reportState, 50);
+      }
+      // 'goto' = hard jump (used for initial sync only)
+      if (e.data.type === 'goto') {
+        var target = e.data.slide;
+        if (target >= 0 && target < slides.length) {
+          // Reset all animation states
+          document.querySelectorAll('.legal-slide').forEach(function(s){ s.classList.remove('legal-active'); });
+          document.querySelectorAll('.legal-sub').forEach(function(s){ s.classList.remove('visible'); });
+          slides.forEach(function(s){ s.classList.remove('active'); });
+          slides[target].classList.add('active');
+          var counter = document.getElementById('counter');
+          var progress = document.getElementById('progress');
+          if (counter) counter.textContent = (target+1) + ' / ' + slides.length;
+          if (progress) progress.style.width = ((target+1)/slides.length*100) + '%';
+          slides[target].querySelectorAll('img[src$=".gif"]').forEach(function(img){
+            var src = img.src; img.src = ''; img.src = src;
+          });
+        }
+        setTimeout(reportState, 50);
+      }
       if (e.data.type === 'ping') {
-        var cur = Array.from(slides).findIndex(function(s){ return s.classList.contains('active'); });
-        ch.postMessage({ type: 'pong', slide: cur });
+        ch.postMessage({ type: 'pong', slide: getCurrent() });
       }
     };
+
+    ch.postMessage({ type: 'ready', slide: getCurrent() });
 
     // Hide nav in audience mode
     var nav = document.querySelector('.nav');
@@ -151,8 +163,8 @@ document.addEventListener('DOMContentLoaded', function(){
     +'<button id="b-nxt">Next &rarr;</button>'
     +'</div>';
 
-  document.getElementById('b-prv').onclick=function(){goTo(currentSlide-1);};
-  document.getElementById('b-nxt').onclick=function(){goTo(currentSlide+1);};
+  document.getElementById('b-prv').onclick=function(){navDir(-1);};
+  document.getElementById('b-nxt').onclick=function(){navDir(1);};
   document.getElementById('g-cls').onclick=function(){document.getElementById('g-pnl').classList.remove('visible');};
 
   // General notes
@@ -168,7 +180,18 @@ document.addEventListener('DOMContentLoaded', function(){
       lastPong=Date.now();
       document.getElementById('s-dot').className='presenter-sync-dot connected';
       document.getElementById('s-txt').textContent='Audience connected';
+      // On first connect, hard-sync to current slide
       chAud.postMessage({type:'goto',slide:currentSlide});
+    }
+    // Audience reports its actual slide after navigating (may differ if sub-animation consumed the click)
+    if(e.data.type==='state'){
+      var reportedSlide = e.data.slide;
+      if(reportedSlide !== currentSlide){
+        currentSlide = reportedSlide;
+        render();
+        chPrev.postMessage({type:'show-current',slide:currentSlide});
+        chPrev.postMessage({type:'show-next',slide:Math.min(currentSlide+1,totalSlides-1)});
+      }
     }
   };
 
@@ -186,13 +209,19 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('p-tmr').textContent=String(Math.floor(e/60)).padStart(2,'0')+':'+String(e%60).padStart(2,'0');
   },1000);
 
-  function goTo(n){
+  function navDir(dir){
+    // Send navigate direction to audience (handles sub-step animations)
+    chAud.postMessage({type:'nav',dir:dir});
+    // Audience will report back its actual slide via 'state' message
+    // which triggers render() and preview updates
+  }
+
+  function jumpTo(n){
+    // Hard jump (for Home/End keys)
     if(n<0)n=0;if(n>=totalSlides)n=totalSlides-1;
     currentSlide=n;
     render();
-    // Send to external audience window
     chAud.postMessage({type:'goto',slide:n});
-    // Send to preview iframes
     chPrev.postMessage({type:'show-current',slide:n});
     chPrev.postMessage({type:'show-next',slide:Math.min(n+1,totalSlides-1)});
   }
@@ -208,10 +237,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Keyboard
   document.addEventListener('keydown',function(e){
-    if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();goTo(currentSlide+1);}
-    else if(e.key==='ArrowLeft'){e.preventDefault();goTo(currentSlide-1);}
-    else if(e.key==='Home'){e.preventDefault();goTo(0);}
-    else if(e.key==='End'){e.preventDefault();goTo(totalSlides-1);}
+    if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();navDir(1);}
+    else if(e.key==='ArrowLeft'){e.preventDefault();navDir(-1);}
+    else if(e.key==='Home'){e.preventDefault();jumpTo(0);}
+    else if(e.key==='End'){e.preventDefault();jumpTo(totalSlides-1);}
     else if(e.key==='Escape'){e.preventDefault();timerStart=Date.now();}
     else if(e.key==='g'){e.preventDefault();document.getElementById('g-pnl').classList.toggle('visible');}
   });
